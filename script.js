@@ -110,11 +110,11 @@ document.getElementById('exercice5').value = ex5.toString();
 //
 // Le résultat doit bien être formaté comme suit => [Movie : Lord of the ring,Predestination],[Show : Sherlock,Black mirror]
 
+const groupedCollection = {
+    Movie: [],
+    Show: []
+}
 function groupBy(collection) {
-    const groupedCollection = {
-        Movie: [],
-        Show: []
-    }
 
     collection.forEach((element) => {
         if (groupedCollection[element.category] === undefined) return
