@@ -5,8 +5,12 @@
 
 // Exemple : ["diorite", "andesite", "grass", "dirt", "pink wool", "dead shrub"], ["diorite", "andesite", "grass", "dirt", "dead shrub"] should return ["pink wool"].
 function arrayDiff(arr1, arr2) {
-    // TODO
     const newArr = [];
+
+    newArr.push(arr1
+        .filter(x => !arr2.includes(x))
+        .concat(arr2.filter(x => !arr1.includes(x))));
+
     return newArr;
 }
 
@@ -25,7 +29,7 @@ document.getElementById('exercice1').value = ex1.toString();
 //
 // Exemple : replaceText("He is Sleeping on the couch", "Sleeping", "sitting") devrait retourner "He is Sitting on the couch".
 function replaceText(str, before, after) {
-    // TODO
+    str = str.replace(before, after)
     return str;
 }
 
@@ -39,9 +43,18 @@ document.getElementById('exercice2').value = ex2.toString();
 // Vérifiez les tests d'assertion pour des exemples.
 
 // Exemple : mergeSet([1, 2, 3], [5, 2, 1]) should return [1, 2, 3, 5].
-function mergeSet(arr) {
-    // TODO
-    return arr;
+function mergeSet(...arr) {
+    var mergedArray = [];
+
+    arr.forEach(function (array) {
+        array.forEach(function (element) {
+            if (!mergedArray.includes(element)) {
+                mergedArray.push(element);
+            }
+        });
+    });
+
+    return mergedArray;
 }
 
 const ex3 = mergeSet([1, 3, 2], [5, 2, 1, 4], [2, 1]);
@@ -55,15 +68,17 @@ document.getElementById('exercice3').value = ex3.toString();
 //
 // Exemple : isTrue([{name: "Pikachu", number: 25, caught: 3}, {name: "Togepi", number: 175, caught: 1}], "number") devrait retourner true.
 function isTrue(collection, pre) {
-    // TODO
-    return pre;
+    return collection.every(function (element) {
+        return !!element[pre];
+    });
 }
 
-const ex4 = isTrue([{name: 'Quincy', role: 'Founder', isBot: false}, {
+const ex4 = isTrue([{ name: 'Quincy', role: 'Founder', isBot: false }, {
     name: 'Naomi',
     role: '',
     isBot: false
-}, {name: 'Camperbot', role: 'Bot', isBot: true}], 'isBot');
+}, { name: 'Camperbot', role: 'Bot', isBot: true }], 'isBot');
+// const ex4 = isTrue([{name: "Pikachu", number: 25, caught: 3}, {name: "Togepi", number: 175, caught: 1}], "number")
 document.getElementById('exercice4').value = ex4.toString();
 
 // Exercice 5
@@ -71,8 +86,7 @@ document.getElementById('exercice4').value = ex4.toString();
 //
 // La fonction de tri prend une collection en entrée, et doit retourner celle ordonnée par ordre alphabétique
 function order(collection) {
-    // TODO
-    return collection;
+    return collection.sort((a, b) => a.localeCompare(b));
 }
 
 const ex5 = order(['Randonnée', 'VTT', 'Montagne', 'Via Ferrata']);
@@ -97,36 +111,45 @@ document.getElementById('exercice5').value = ex5.toString();
 // Le résultat doit bien être formaté comme suit => [Movie : Lord of the ring,Predestination],[Show : Sherlock,Black mirror]
 
 function groupBy(collection) {
-    // TODO
-    return collection;
+    const groupedCollection = {
+        Movie: [],
+        Show: []
+    }
+
+    collection.forEach((element) => {
+        if (groupedCollection[element.category] === undefined) return
+        groupedCollection[element.category].push(element.toString());
+    })
+
+    return groupedCollection;
 }
 
 const ex6 = groupBy([
     {
         category: 'Movie',
         title: 'Lord of the ring',
-        toString: function(){
+        toString: function () {
             return this.title;
         }
     },
     {
         category: 'Movie',
         title: 'Predestination',
-        toString: function(){
+        toString: function () {
             return this.title;
         }
     },
     {
         category: 'Show',
         title: 'Sherlock',
-        toString: function(){
+        toString: function () {
             return this.title;
         }
     },
     {
         category: 'Show',
         title: 'Black mirror',
-        toString: function(){
+        toString: function () {
             return this.title;
         }
     },
