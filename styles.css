@@ -1,0 +1,59 @@
+@font-face {
+  font-family: General;
+  src: url("/assets/fonts/general/GeneralSans-Regular.woff") format("woff");
+  font-weight: 400;
+  font-style: normal;
+}
+
+body {
+  font-family: "General", sans-serif;
+  display: flex;
+  flex-direction: column;
+  padding: 2rem;
+}
+
+h1, h2 {
+  margin-bottom: 0;
+  font-weight: normal;
+}
+
+h1 {
+  text-align: center;
+}
+
+span {
+  text-decoration: underline;
+}
+
+img {
+  width: 100px;
+  margin: auto;
+}
+
+hr {
+  width: 100%;
+  margin-bottom: 0;
+}
+
+p {
+  text-justify: inter-word;
+  line-height: 1.6;
+}
+
+.search-bar {
+  padding: .4rem 0 .4rem 1rem;
+  border-radius: 10px;
+  border: solid thin lightgray;
+  outline: none;
+  font-family: "General", sans-serif;
+  font-weight: normal;
+  font-size: 15px;
+  transition: .2s linear;
+  min-height: 1.5rem;
+  max-height: 1.5rem;
+}
+
+.search-bar:hover {
+  border-color: #2d2d2d;
+  transition: all .3s ease-in-out;
+}

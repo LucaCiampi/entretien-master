@@ -1,0 +1,111 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>VeryMountain - Test JavaScript</title>
+    <base href="/">
+    <link rel="stylesheet" type="text/css" href="styles.css">
+</head>
+<body>
+    <img src="https://verymountain.fr/assets/images/monogramme.png" alt="Logo VeryMountain" />
+    <h1>Test entretien - durée estimée 2h</h1>
+    <h2>Consignes</h2>
+    <hr>
+    <p>
+        <span>Date de rendu :</span> dimanche à 23h59.<br>
+        <span>A faire :</span> Réaliser les 6 exercices, le code à modifier se trouve dans le fichier 'script.js'<br>
+        <span>Le rendu :</span> Poussez le code sur un repos git à vous, puis le lien vers votre repos git doit être envoyé par mail à <a href="mailto:angelo@verymountain.fr">angelo@verymountain.fr</a><br>
+        (Pensez bien à me donner les accès à ce repos git (accès public ou autorisation))<br>
+        <span>Bonne chance à vous !</span>
+    </p>
+    <h2>Exercice 1</h2>
+    <hr>
+    <p>
+        Comparez deux tableaux et renvoyez un nouveau tableau avec tous les éléments trouvés uniquement dans l'un des deux tableaux donnés, mais pas les deux.<br>
+        En d'autres termes, renvoie la différence symétrique des deux tableaux.<br>
+        Remarque : Vous pouvez renvoyer le tableau avec ses éléments dans n'importe quel ordre.
+    </p>
+    <input id="exercice1" class="search-bar" type="text" placeholder="Faire l'exercice 1 pour afficher le résultat ici" disabled />
+    <p class="result"><span>Résultat attendu :</span> arrayDiff([1, 2, 3, 5], [1, 2, 3, 4, 5]) devrait retourner ['4'].</p>
+
+    <h2>Exercice 2</h2>
+    <hr>
+    <p>
+        Effectuez une recherche et un remplacement sur la phrase en utilisant les arguments fournis et renvoyez la nouvelle phrase.<br><br>
+
+        Le premier argument est la phrase sur laquelle effectuer la recherche et le remplacement.<br>
+        Le deuxième argument est le mot que vous allez remplacer (avant).<br>
+        Le troisième argument est ce que vous allez remplacer le deuxième argument par (après).<br>
+
+        Remarque : Préservez la casse du premier caractère du mot d'origine lorsque vous le remplacez.<br>
+        Par exemple, si vous voulez remplacer le mot Livre par le mot chien, il doit être remplacé par Chien<br><br>
+
+        <span>Exemple :</span> replaceText("He is Sleeping on the couch", "Sleeping", "sitting") devrait retourner "He is Sitting on the couch".
+    </p>
+    <input id="exercice2" class="search-bar" type="text" placeholder="Faire l'exercice 2 pour afficher le résultat ici" disabled />
+    <p class="result"><span>Résultat attendu :</span> replaceText("Let us go to the store", "store", "mall") devrait retourner "Let us go to the mall."</p>
+
+    <h2>Exercice 3</h2>
+    <hr>
+    <p>
+        Écrivez une fonction qui prend au moins deux tableaux et renvoie un nouveau tableau de valeurs uniques dans l'ordre des tableaux fournis à l'origine.<br>
+        En d'autres termes, toutes les valeurs présentes dans tous les tableaux doivent être incluses dans leur ordre d'origine, mais sans doublons dans le tableau final.<br>
+        Les numéros uniques doivent être triés selon leur ordre d'origine, mais le tableau final ne doit pas être trié par ordre numérique.<br>
+        Vérifiez les tests d'assertion pour des exemples.
+    </p>
+    <input id="exercice3" class="search-bar" type="text" placeholder="Faire l'exercice 3 pour afficher le résultat ici" disabled />
+    <p class="result"><span>Résultat attendu :</span> mergeSet([1, 3, 2], [5, 2, 1, 4], [2, 1]) devrait retourner [1, 3, 2, 5, 4].</p>
+
+    <h2>Exercice 4</h2>
+    <hr>
+    <p>
+        Vérifiez si le prédicat (deuxième argument) est vrai sur tous les éléments d'une collection (premier argument).<br><br>
+
+        En d'autres termes, on vous donne une collection de tableaux d'objets. Le prédicat pre sera une propriété d'objet et vous devrez retourner true si sa valeur est true. Sinon, renvoie faux.<br>
+        En JavaScript, les valeurs de vérité sont des valeurs qui se traduisent par vrai lorsqu'elles sont évaluées dans un contexte booléen.<br><br>
+
+        <span>Exemple :</span> isTrue([{name: "Pikachu", number: 25, caught: 3}, {name: "Togepi", number: 175, caught: 1}], "number") devrait retourner true.<br>
+    </p>
+    <input id="exercice4" class="search-bar" type="text" placeholder="Faire l'exercice 4 pour afficher le résultat ici" disabled />
+    <p class="result"><span>Résultat attendu :</span> isTrue([{name: "Quincy", role: "Founder", isBot: false}, {name: "Naomi", role: "", isBot: false}, {name: "Camperbot", role: "Bot", isBot: true}], "isBot") devrait retourner false.</p>
+
+    <h2>Exercice 5</h2>
+    <hr>
+    <p>
+        Trier un tableau par ordre alphabétique<br>
+
+        La fonction de tri prend une collection en entrée, et doit retourner celle-ci ordonnée par ordre alphabétique
+    </p>
+    <input id="exercice5" class="search-bar" type="text" placeholder="Faire l'exercice 5 pour afficher le résultat ici" disabled />
+    <p class="result"><span>Résultat attendu :</span> order([ 'Randonnée', 'VTT', 'Montagne', 'Via Ferrata']) devrait retourner 'Montagne', 'Randonnée', 'Via Ferrata', 'VTT'</p>
+
+    <h2>Exercice 6</h2>
+    <hr>
+    <p>
+        Grouper des objets par propriété commune<br><br>
+
+        On cherche à regrouper les films entre eux et les séries entre elles<br>
+        En se basant sur la propriété category, on cherche à obtenir le résultat suivant [Movie : Lord of the ring,Predestination],[Show : Sherlock,Black mirror]<br>
+        La structure à mettre en place est la suivante :<br>
+        <pre>
+            <code>
+            [
+              category,
+              items: [{
+                category: string,
+                title: string,
+                toString: () => {}
+              }],
+              toString: () => {}
+            ]
+            </code>
+        </pre>
+
+        Le résultat doit bien être formaté comme suit &#8594 [Movie : Lord of the ring,Predestination],[Show : Sherlock,Black mirror]
+    </p>
+    <input id="exercice6" class="search-bar" type="text" placeholder="Faire l'exercice 6 pour afficher le résultat ici" disabled />
+    <p class="result"><span>Résultat attendu :</span> [Movie : Lord of the ring,Predestination],[Show : Sherlock,Black mirror]</p>
+
+    <script type="application/javascript" src="script.js"></script>
+</body>
+</html>
